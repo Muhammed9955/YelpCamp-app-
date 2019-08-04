@@ -55,8 +55,13 @@
     app.use( "/campgrounds",  camgroundRoutes);
     app.use( "/campgrounds/:id/comments", commnetRoutes);
 
+        let port = process.env.PORT;
+        if (port == null || port == "") {
+        port = 8000;
+        }
+        app.listen(port);
 
-    app.listen(3000, function(){
+    app.listen(port, function(){
     console.log("The YelpCamp Server has started")
     });
 
