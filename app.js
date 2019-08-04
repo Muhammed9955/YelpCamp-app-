@@ -55,7 +55,8 @@
     app.use( "/campgrounds",  camgroundRoutes);
     app.use( "/campgrounds/:id/comments", commnetRoutes);
 
-        let port = process.env.PORT;
+    // var port=Number(process.env.PORT || 3000);
+        let port=Number(process.env.PORT || 3000);
         if (port == null || port == "") {
         port = 8000;
         }
