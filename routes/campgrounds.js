@@ -69,7 +69,7 @@ router.put("/:id",checkCampgroundOwnership, function(req, res){
             req.flash("error", err.message);
             redirect("/campgrounds");
         } else {
-            req.flash("success", "campground uapdted successfully");
+            req.flash("success", "campground updated successfully");
             res.redirect("/campgrounds/" + req.params.id )
         }
     });

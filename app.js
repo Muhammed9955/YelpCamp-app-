@@ -21,8 +21,14 @@
     // seedDB();
     app.use(bodyParser.urlencoded({extented:true}));
     app.set("view engine","ejs");
-    mongoose.connect("mongodb://localhost/yelp_camp_11");
-    app.use(express.static(__dirname + "/Public"));
+    
+    // var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_11";
+    // mongoose.connect(url);
+    mongoose.connect("mongodb+srv://medo:medo1995@cluster0-l9wzj.mongodb.net/yelp_camp_12");
+    // mongoose.connect("mongodb://localhost/yelp_camp_11");
+
+
+    app.use(express.static("public"));
     app.use(methodOverride("_method"));
     app.use(flash());
     // Passport Configuration
@@ -54,6 +60,6 @@
     console.log("The YelpCamp Server has started")
     });
 
-    // app.listen(process.env.PORT , proccess.env.IP , function(){
+    // app.listen(process.env.PORT , process.env.IP , function(){
     //     console.log("The YelpCamp Server has started")
     //     });

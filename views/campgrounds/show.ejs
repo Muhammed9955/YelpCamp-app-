@@ -15,9 +15,9 @@
             <div class="card ">
                 <img class="card-img-top" src="<%= campground.image %>" >
                 <div class="card-body">
-                    <h5 class="card-title"><%= campground.name %></h5>
-                    <p class="card-text"> <%= campground.description %> </p>
-                    <p class="card-text text-right"> <small class="text-muted">$<%= campground.price%></small> </p>
+                    <h5 class="card-title"><%= campground.name %> <small class="text-muted" style="margin-left: 100%"">$<%= campground.price%></small></h5>
+                    <p class="card-text"> <%= campground.description %>   </p>
+                    <p class="card-text text-right" >  </p>
                     <p class="card-text"> <em>Submitted By <%= campground.author.username  %></em> </p>
                 <% if (currentUser && campground.author.id.equals(currentUser._id)){ %>
                     <a class="btn btn-warning" role="button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
@@ -37,7 +37,7 @@
 
                                 <h5 class="card-title"><strong> <%= comment.author.username %> </strong></h5>
                                 <p class="card-text"><%=  comment.text %></p>   
-                                <p class="card-text text-right"> <small class="text-muted">10 days ago</small></p>   
+                                <!-- <p class="card-text text-right"> <small class="text-muted">10 days ago</small></p>    -->
                             <!-- <% if (currentUser && comment.author.id.equals(currentUser._id)){ %> -->
                                 <a class="btn btn-x btn-warning" role="button"
                                  href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
