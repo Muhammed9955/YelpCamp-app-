@@ -22,9 +22,11 @@
     app.use(bodyParser.urlencoded({extented:true}));
     app.set("view engine","ejs");
     
-    // var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_11";
-    // mongoose.connect(url);
-    mongoose.connect("mongodb+srv://medo:medo1995@cluster0-l9wzj.mongodb.net/yelp_camp_12");
+    //mongodb 
+    let url =  "mongodb+srv://medo:medo1995@cluster0-l9wzj.mongodb.net/yelp_camp_12" ||
+     "mongodb://localhost/yelp_camp_11" ; 
+    mongoose.connect(url);
+    // mongoose.connect("mongodb+srv://medo:medo1995@cluster0-l9wzj.mongodb.net/yelp_camp_12");
     // mongoose.connect("mongodb://localhost/yelp_camp_11");
 
 
@@ -58,9 +60,9 @@
     // var port=Number(process.env.PORT || 3000);
         let port = process.env.PORT;
         if (port == null || port == "") {
-        port = 8000;
+        port = 3000;
         }
-        app.listen(port);
+        // app.listen(port);
 
     app.listen(port, function(){
     console.log("The YelpCamp Server has started")
